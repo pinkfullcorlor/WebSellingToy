@@ -2,30 +2,165 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang web của Pink</title>
+    <link rel="stylesheet" href="style.css">
+    @Styles.Render("~/Content/style.css")
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <!-- font chữ -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap" rel="stylesheet">    -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;300;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/style.css">
+
+
+
+
+
+</head>
+<body>
+    <div class="img-plank-site">
+        <img src="~/image/gundam_plank.jpg" alt="gundam_plank">
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+
+    <section class="saleoff">
+        <h1>SALE OFF UP TO 60%</h1>
+        <p>GIẢM GIÁ CÁC MẶT HÀNG GUNDAM, FIGURE, VÀ ĐỒ CHƠI GIẢI ĐỐ. ÁP DỤNG CHO TẤT CẢ CÁC CHI NHÁNH CỦA CỬA HÀNG VÀ ĐẶT HÀNG ONLINE.</p>
+
+        <div class="row">
+
+            <div class="saleoff-col">
+                <img src="~/image/figure3.jpg" alt="gundam1">
+                <div class="layer">
+                    <h3>SALE 10-15%<br>MUA NGAY <br><i class="fa fa-shopping-cart" aria-hidden="true"></i></h3>
+                </div>
+            </div>
+
+            <div class="saleoff-col">
+                <img src="~/image/gundam1.jpg" alt="gundam1">
+                <div class="layer">
+                    <h3>SALE 15-35%<br>MUA NGAY <br><i class="fa fa-shopping-cart" aria-hidden="true"></i></h3>
+
+                </div>
+            </div>
+
+            <div class="saleoff-col">
+                <img src="~/image/figure2.jfif" alt="gundam1">
+                <div class="layer">
+                    <h3>SALE 35-60%<br> MUA NGAY <br><i class="fa fa-shopping-cart" aria-hidden="true"></i></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="typeitem">
+        <h1>DANH MỤC SẢN PHẨM</h1>
+        <div class="rowitem">
+            <div class="typeitem-col">
+                <img src="~/image/gundam4.jpg" alt="gundam1">
+                <div class="layer">
+                    <h3 class="gundam">
+                        <a href=""><h1>GUNDAM</h1></a> <br>
+                        <a href="">High Grade (HG)</a><br>
+                        <a href="">Real Grade (RG)</a><br>
+                        <a href="">Master Grade (MG)</a><br>
+                        <a href="">Perfect Grade (PG)</a><br>
+                        <a href="">Super Deformed (SD)</a><br>
+
+                    </h3>
+                </div>
+            </div>
+            <div class="typeitem-col">
+                <img src="~/image/figure2.jpg" alt="gundam1">
+                <div class="layer">
+                    <h3 class="figure">
+                        <a href=""><h1>FIGURE</h1></a> <br>
+                        <a href="">Scale Figure(Figure Tĩnh)</a> <br>
+                        <a href="">Action Figure(Figure Động)</a> <br>
+                        <a href="">Chibi Figure(Đầu to thân nhỏ)</a> <br>
+                    </h3>
+                </div>
+            </div>
+            <div class="typeitem-col">
+                <img src="~/image/puzzle-toy3.jpg" alt="gundam1">
+                <div class="layer">
+                    <h3 class="puzzle">
+                        <a href=""> <h1>PUZZLE</h1></a> <br>
+                        <a href="">RUBIK</a> <br>
+                        <a href="">Xếp Hình</a> <br>
+                        <a href="">Các loại khác</a> <br>
+                    </h3>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="newfeeds">
+        <h1>TIN TỨC VÀ BÀI VIẾT NỔI BẬT</h1>
+        <p>Các tin tức nổi bật về thế giới đồ chơi trong tuần qua</p>
+
+        <div class="row-grid">
+            <div class="grid-item">
+                <img src="~/image/puzzle.jpg" alt="">
+                <h1><a href="">Top 10 đồ chơi xếp hình puzzle bán chạy nhất trên thị trường hiện nay</a></h1>
+                <p>
+                    Bộ ghép hình Ingooood Rainy Night Walk paper của nghệ sĩ Leonid Afremov được khắc họa lại bằng một phong cảnh thoải mái và thật sự ấm áp
+                    Tất cả các mảnh ghép trong bộ xếp hình Puzzle sẽ lồng ghép vào nhau để tạo nên sự độc đáo, đặc biệt hơn cả là mỗi miếng ghép đều được làm bằng ván dăm màu xanh rất chắc chắn trên một tờ giấy...
+                    <a href=""><i>đọc tiếp</i></a>
+                </p>
+            </div>
+            <div class="grid-item">
+                <img src="~/image/gundam5.jpg" alt="">
+                <h1><a href=""> Mobile Suit Gundam Calendar 2021 đầy đao kiếm</a></h1>
+                <p>
+                    Bộ lịch Gudam 2021 treo tường do Movic thực hiện sẽ được tung ra ở thị trường Nhật Bản vào khoảng giữa tháng 10 tới đây với giá 1.980 yên. Đặc biệt, chủ đề của Mobile Suit Gundam Calendar 2021 đợt
+                    này là “Sword-Blade”. Do đó, các Mobile Suit xuất hiện hình lịch đều khoe đao, múa kiếm với nhiều tư thế đẹp mắt, oai phong.
+                    <a href=""><i>đọc tiếp</i></a>
+                </p>
+            </div>
+            <div class="grid-item">
+                <img src="~/image/tintuc.jpeg" alt="">
+                <h1><a href="">Bất ngờ bộ sưu tập đồ chơi hàng xóm quá cố tặng có giá hơn 12 tỷ đồng</a></h1>
+                <p>
+                    Cặp vợ chồng già không hề biết rằng món quà mà người hàng xóm quá cố đã tặng lại có giá trị như vậy.
+                    Đây là bộ sưu tập đồ chơi bằng nhựa mà người hàng xóm hâm mộ bộ phim Star War (Chiến tranh giữa các vì sao) đã tặng cho cặp vợ chồng
+                    sống ở Stourbridge, West Midlands, Anh.
+                    <a href=""><i>đọc tiếp</i></a>
+                </p>
+            </div>
+
+            <div class="grid-item">
+                <img src="~/image/tintuc.jpeg" alt="">
+                <h1><a href="">Bất ngờ bộ sưu tập đồ chơi hàng xóm quá cố tặng có giá hơn 12 tỷ đồng</a></h1>
+                <p>
+                    Cặp vợ chồng già không hề biết rằng món quà mà người hàng xóm quá cố đã tặng lại có giá trị như vậy.
+                    Đây là bộ sưu tập đồ chơi bằng nhựa mà người hàng xóm hâm mộ bộ phim Star War (Chiến tranh giữa các vì sao) đã tặng cho cặp vợ chồng
+                    sống ở Stourbridge, West Midlands, Anh.
+                    <a href=""><i>đọc tiếp</i></a>
+                </p>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+</body>
+</html>
