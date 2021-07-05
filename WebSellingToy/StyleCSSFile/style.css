@@ -5,10 +5,7 @@
     font-family: 'Prompt', sans-serif;
 }
 
-body {
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
+
 
 
 
@@ -47,7 +44,7 @@ nav img{
     font-family: 'Prompt', sans-serif;
     font-weight: bolder;
 }
-.nav-menu ul li::after{
+.nav-menu ul li a::after{
     content: '';
     width: 0%;
     height: 2px;
@@ -56,16 +53,82 @@ nav img{
     margin: auto;
     transition: 0.5s;
 }
-.nav-menu ul li:hover:after{
+.nav-menu ul li a:hover:after{
     width: 100%;
 
 }
 
-.img-plank-site img{
+.sub-menu-1 {
+    display: none;
+    width: initial;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #2e4fac;
+}
+
+.nav-menu ul li a:hover .fa-angle-down, .nav-menu ul li a .fa-angle-up {
+    display: none;
+}
+
+.nav-menu ul li a:hover .fa-angle-up{
+    display:inline;
+}
+
+.nav-menu ul li:hover .sub-menu-1 {
+    display: block;
+    position: absolute;
+    background: whitesmoke;
+    margin-top: 5px;
+    margin-left: -15px;
+}
+.nav-menu ul li:hover .sub-menu-1 ul{
+    display:block;
+    margin:10px;
+}
+.sub-menu-1 ul li {
+    width:200px;
+    padding: 10px;
+    border-bottom: 1px double black; 
+    border-radius: 0;
+    text-align: left;
+}
+
+
+
+
+.nav-login ul {
+    display: flex;
+    padding: 5px 10px 5px;
+    justify-content: flex-end;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background: #4c4c4c;
+    color: whitesmoke;
+}
+.nav-login ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-login ul li a{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Prompt', sans-serif;
+    font-weight:700;
+    
+    color: whitesmoke;
+}
+.nav-login ul li a:hover{
+    color: tomato;
+}
+
+
+.img-plank-site img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    
 }
 
 .saleoff{
@@ -74,6 +137,7 @@ nav img{
     text-align: center;
     padding-top: 50px ;
 }
+
 
 .saleoff h1{
     font-size: 30px;
@@ -109,7 +173,6 @@ nav img{
     left: 0;
     transition: 0.5s;
 }
-
 .layer:hover{
     background: rgba(155, 170, 255, 0.8);
 }
@@ -128,9 +191,22 @@ nav img{
     transition: 0.5s;
 }
 
+
 .layer:hover h3{
     bottom: 30%;
     opacity: 1;
+}
+
+.layer h3 a{
+    color: white;
+    text-decoration:none; bỏ dấu gạch chân trên hyperlink
+    font-weight: bold;
+    
+        
+}
+
+.layer h3 a:hover {
+    color: #2e4fac;
 }
 
 /*đưa về định dạng chung*/

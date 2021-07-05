@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DangNhap</title>
+</head>
+
+<body>
+    <div>
+        <h2>Đăng Nhập</h2>
+    </div>
+    <div>
+        <h4>@ViewBag.Thongbao</h4>
+        <table>
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true);
+                <tr>
+                    <td>Tên đăng nhập:</td>
+                    <td>
+                        @Html.TextBox("TenDN")
+                        @ViewData["Loi1"]
+                    </td>
+                </tr>
+                <tr>
+                    <td>Mật Khẩu:</td>
+                    <td>
+                        @Html.Password("MatKhau")
+                        @ViewData["Loi2"]
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Đăng Nhập" />
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    
+</body>
+</html>

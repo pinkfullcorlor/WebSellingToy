@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WebSellingToy.Models.SanPham>
+
+@{
+    ViewBag.Title = "XemDSHangHoa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <section class="saleoff">
+        <h2>XemDSHangHoa</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "ThemSpMoi")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TenSanPham)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MaLoai)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.XuatXu)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonViTinh)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SLTon)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GiaThuMua)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GiaBan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NgaySanXuat)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GhiChu)
+                </th>
+                <th></th>               
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenSanPham)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MaLoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.XuatXu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonViTinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SLTon)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaThuMua)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GiaBan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgaySanXuat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GhiChu)
+                </td>
+                
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MaSanPham }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.MaSanPham }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MaSanPham })
+                </td>
+            </tr>
+            }
+
+        </table>
+
+
+    </section>
+
+</body>
+
+

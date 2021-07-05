@@ -1,16 +1,19 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    //Layout = "~/Views/Shared/_AdminManagementWeb.cshtml";
 }
+        
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang web của Pink</title>
-    <link rel="stylesheet" href="style.css">
-    @Styles.Render("~/Content/style.css")
+    @*<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trang web của Pink</title>
+        <link rel="stylesheet" href="style.css">
+        @Styles.Render("~/Content/style.css")
+        <link rel="stylesheet" href="~/Content/style.css">*@
 
     <!-- font chữ -->
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -20,7 +23,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;300;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/Content/style.css">
+    <link href="~/StyleCSSFile/style.css" rel="stylesheet" />
+    @Scripts.Render("~/StyleCSSFile/style.css")
+
 
 
 
@@ -42,25 +47,39 @@
             <div class="saleoff-col">
                 <img src="~/image/figure3.jpg" alt="gundam1">
                 <div class="layer">
-                    <h3>SALE 10-15%<br>MUA NGAY <br><i class="fa fa-shopping-cart" aria-hidden="true"></i></h3>
+                    <h3><a href="#"> SALE 10-15% <br> MUA NGAY <br><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></h3>
                 </div>
             </div>
 
             <div class="saleoff-col">
                 <img src="~/image/gundam1.jpg" alt="gundam1">
                 <div class="layer">
-                    <h3>SALE 15-35%<br>MUA NGAY <br><i class="fa fa-shopping-cart" aria-hidden="true"></i></h3>
-
+                    <h3><a href="#"> SALE 15-35% <br> MUA NGAY <br><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></h3>
                 </div>
             </div>
 
             <div class="saleoff-col">
                 <img src="~/image/figure2.jfif" alt="gundam1">
                 <div class="layer">
-                    <h3>SALE 35-60%<br> MUA NGAY <br><i class="fa fa-shopping-cart" aria-hidden="true"></i></h3>
+                    <h3><a href="#"> SALE 35-60% <br> MUA NGAY <br><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></h3>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section>
+        <ul>
+            @*@{
+                IEnumerable<WebSellingToy.Models.LoaiHangHoa> loaiHangHoas = ViewData["Loais"] as IEnumerable<WebSellingToy.Models.LoaiHangHoa>;
+                var loais = ViewData["Loais"] as IEnumerable<WebSellingToy.Models.LoaiHangHoa>;
+            }
+            @ViewData["Loais"]
+
+            @foreach (var loaiHang in loais)
+            {
+                <li>@loaiHang.TenLoai</li>
+            }*@
+        </ul>
     </section>
 
     <section class="typeitem">

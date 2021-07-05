@@ -1,0 +1,92 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DangKy</title>
+    <link href="~/StyleCSSFile/StyleFormRegister.css" rel="stylesheet" />
+
+    @*link font chữ*@
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;300;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="header">
+        <img src="~/image/fullcolorworkshop.jpg" alt="menu-icon" , width="200" , height="200">
+        <h2>FullColorWorkshop</h2>
+    </div>
+
+
+    <div class="body-content">
+        <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+        <div class="dienthongtin">
+            <table class="table-dangky">
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary(true)
+                    <tr>
+                        <td>Họ tên khách hàng:</td>
+                        <td>@Html.TextBox("TenKhachHang")@ViewData["Loi1"]</td>
+                    </tr>
+                    <tr>
+                        <td>Tên đăng nhập khách hàng:</td>
+                        <td>@Html.TextBox("TenDangNhapKH")@ViewData["Loi2"]</td>
+                    </tr>
+                    <tr>
+                        <td>Nhập mật khẩu:</td>
+                        <td>@Html.Password("MatKhau")@ViewData["Loi3"]</td>
+                    </tr>
+                    <tr>
+                        <td>Nhập lại mật khẩu:</td>
+                        <td>@Html.Password("NhapLaiMK")@ViewData["Loi4"]</td>
+                    </tr>
+                    <tr>
+                        <td>Địa Chỉ:</td>
+                        <td>@Html.TextBox("DiaChi")@ViewData["Loi5"]</td>
+                    </tr>
+                    <tr>
+                        <td>Ngày Sinh:</td>
+                        <td>
+                            <input type="date" name="NgaySinh" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Số điện thoại:</td>
+                        <td>@Html.TextBox("SoDienThoai")@ViewData["Loi7"]</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Đăng ký" />
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+    </div>
+
+    <section class="footer">
+
+        Liên hệ chúng tôi tại:
+        <a href="https://www.facebook.com/PinkFullColor/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="https://www.youtube.com/channel/UC5NrRSWb3um7CM1fnbZo7eQ"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+        <a href="https://www.instagram.com/pinkfullcolor/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/pinkfullcolor/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <h4>Design By PinkFullColor</h4>
+        <hr />
+        <footer>
+            <p>Copyright&copy; 2021 All Copyrights Reserved</p>
+        </footer>
+    </section>
+
+
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+﻿@using WebSellingToy;
+@model IEnumerable<WebSellingToy.Models.LoaiHangHoa>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+@foreach (var loai in Model)
+{
+    {
+        <li>@loai.TenLoai</li>
+    }
+}
