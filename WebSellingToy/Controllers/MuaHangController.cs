@@ -23,6 +23,18 @@ namespace WebSellingToy.Controllers
             return View(sanpham);
         }
 
+        public ActionResult ChiTietSanPham(int id)
+        {
+            var sanpham = from s in data.SanPhams
+                          where s.MaSanPham == id
+                          select s;
+
+            return View(sanpham.Single());
+
+        }
+
+        
+
         
 
     }

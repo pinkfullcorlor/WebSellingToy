@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebSellingToy.Models;
+using WebSellingToy.ViewModel;
 
 namespace WebSellingToy.Controllers
 {
@@ -33,17 +34,46 @@ namespace WebSellingToy.Controllers
 
             //ViewBag.Message = "Welcome to my demo!";
             ViewData["Loais"] = LayDSLoai();
-            
+
             return View();
         }
 
-        
+
 
         public ActionResult RenderDSLoai()
         {
             var loai = LayDSLoai();
 
             return PartialView(loai);
+        }
+
+        private int TongSoLuong()
+        {
+            int iTongSoLuong = 0;
+            List<GioHang> lstGioHang = Session["GioHang"] as List<GioHang>;
+            if (lstGioHang != null)
+            {
+                iTongSoLuong = lstGioHang.Sum(n => n.iSoLuong);
+            }
+            return iTongSoLuong;
+        }
+
+
+        
+        public ActionResult _UserLayout()
+        {
+            
+            return View();
+        }
+        public ActionResult LogOut()
+        {
+            if (Session["Taikhoan"] != null)
+            {
+                Session.Clear();
+                return RedirectToAction("Index", "Home");
+            }
+            
+            return View();
         }
     }
 }

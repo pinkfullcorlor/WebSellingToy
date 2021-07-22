@@ -1,0 +1,94 @@
+﻿@using WebSellingToy.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "Dat Hang";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>DatHang</h2>
+<table align="center" border="1">
+    <tr style="text-align:center; font-weight:bold">
+        <td> Ma San Pham</td>
+        <td> Ten San Pham</td>
+        <td> Anh Bia</td>
+        <td> So Luong</td>
+        <td> Don Gia</td>
+        <td> Thanh Tien</td>
+    </tr>
+
+
+
+    @foreach (var item in Model)
+    {
+        <tr style="text-align: center; font-weight:bold">
+            <td>@item.iMaSP</td>
+            <td>@item.sTenSP</td>
+            <td><img src="~/HinhAnhSanPham/@item.sHinhAnh" /></td>
+            @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @iMaSanPham = item.iMaSP }))
+            {
+                <td>
+                    <input type="number" min="1" name="txtSoLuong" value="@item.iSoLuong" style="background: yellow">
+                </td>
+                <td>@String.Format("{0:0,0}", item.dDonGia)</td>
+                <td>@String.Format("{0:0,0}", item.dThanhTien)</td>
+
+
+            }
+
+        </tr>
+    }
+    <tr style="font-weight:bold; text-align:right; color:red">
+        <td colspan="3"> So luong san pham: @ViewBag.TongSoLuong</td>
+        <td colspan="3"> Tong Tien: @String.Format("{0:0,0}", ViewBag.TongTien) VND</td>
+    </tr>
+    <tr style="font-weight: bold; color: tomato; text-align:right;">
+        <td colspan="9">
+            @Html.ActionLink("Trở về giỏ hàng", "GioHang", "GioHang");
+
+        </td>
+
+    </tr>
+
+</table>
+
+<h2>Thông tin người đặt hàng</h2>
+@{
+    KhachHang kh = Session["Taikhoan"] as KhachHang;
+}
+<table align="center">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr>
+            <td>Họ tên khách hàng:</td>
+            <td>@kh.TenKhachHang</td>
+        </tr>
+        <tr>
+            <td>Địa chỉ:</td>
+            <td>@kh.DiaChi</td>
+        </tr>
+        <tr>
+            <td>Số điện thoại:</td>
+            <td>@kh.SoDienThoai</td>
+        </tr>
+        <tr>
+            <td>Ngày đặt:</td>
+            <td name="NgayLapHD">@DateTime.Now.ToString()</td>
+        </tr>
+        <tr>
+            <td>Địa chỉ nhận hàng:</td>
+            <td><textarea name="DiaChiNhanHang" cols="40" rows="5"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Đặt hàng ngay"/>
+            </td>
+        </tr>
+
+
+    }
+
+
+</table>
+

@@ -2,8 +2,16 @@
 @model IEnumerable<WebSellingToy.Models.SanPham>
 
 @{
-    ViewBag.Title = "MuaHang";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    ViewBag.Title = "Home Page";
+    if (Session["TaiKhoan"] != null)
+    {
+        Layout = "~/Views/Shared/_UserLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 }
 <link href="~/StyleCSSFile/style.css" rel="stylesheet" />
 <link href="~/StyleCSSFile/StyleAllProduce.css" rel="stylesheet"/>
@@ -17,12 +25,12 @@
         {
             <div class="grid-item">
                 <a href="@Url.Action("Detail", "SellingToy", new { id = sanpham.MaSanPham })"></a>
-                <img alt="@sanpham.TenSanPham" src="~/image/figure2.jpg" />
+                <img alt="@sanpham.TenSanPham" src="@Url.Content("~/HinhAnhSanPham/"+ sanpham.HinhAnh)" />
                 <h1><a href="">@sanpham.TenSanPham</a></h1>
                 
-                <p class="giatien">@Int32.Parse(sanpham.TenSanPham) VND</p>
+                <p class="giatien">@decimal.ToInt32(sanpham.GiaBan) VND</p>
                 <div class="layer">
-                    <h3 class="buynow"><a href="#"><br>MUA NGAY <br><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></h3>
+                    <h3 class="buynow"><a href="@Url.Action("ChiTietSanPham","MuaHang", new { id = sanpham.MaSanPham})"><br>MUA NGAY <br><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></h3>
                 </div>
 
             </div>

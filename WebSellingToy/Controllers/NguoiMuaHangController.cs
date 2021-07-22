@@ -73,6 +73,14 @@ namespace WebSellingToy.Controllers
             return this.DangKy();
         }
 
+
+        [HttpGet]
+        public ActionResult DangNhap()
+        {
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult DangNhap(FormCollection collection)
         {
             var tendn = collection["TenDN"];
@@ -93,6 +101,7 @@ namespace WebSellingToy.Controllers
                 {
                     ViewBag.Thongbao = "Chúc mừng đăng nhập thành công!!!";
                     Session["Taikhoan"] = kh;
+                    return RedirectToAction("Index","Home");
                 }
                 else
                     ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không đúng";

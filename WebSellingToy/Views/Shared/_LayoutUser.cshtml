@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<WebSellingToy.Models.LoaiHangHoa>
+@*@model IEnumerable<WebSellingToy.Models.LoaiHangHoa>*@
 
 @{
 
@@ -27,6 +27,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
 
@@ -44,9 +48,9 @@
             <a href="index.html"><img src="~/image/fullcolorworkshop.jpg" alt="menu-icon" , width="200" , height="200"></a>
             <div class="nav-menu">
                 <ul>
-                    <li><a href="">Trang Chủ</a></li>
+                    <li><a href="~/Home/Index">Trang Chủ</a></li>
                     <li>
-                        <a href="">Sản Phẩm <i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+                        <a href="~/MuaHang/MuaHang">Sản Phẩm <i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-up" aria-hidden="true"></i></a>
                         <div class="sub-menu-1">
                             <ul>
 
@@ -97,3 +101,4 @@
 
 </body>
 </html>
+

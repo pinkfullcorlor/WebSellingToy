@@ -1,0 +1,135 @@
+﻿@using WebSellingToy.Models;
+@using PagedList.Mvc;
+
+
+@model PagedList.PagedList<WebSellingToy.Models.SanPham>
+@{
+    ViewBag.Title = "QuanLySanPham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@helper Truncate(string input, int lenght)
+{
+if (input == null)
+{
+    @input
+}
+else if (input.Length < lenght)
+{
+    @input
+}
+else
+{
+    @input.Substring(0, lenght)<text>...</text>
+}
+}
+
+<h2>Quản Lý Sản Phẩm</h2>
+
+<p>
+    @Html.ActionLink("Thêm Sản Phẩm Mới", "ThemMoiSanPham")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TenSanPham)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MaLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().XuatXu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().DonViTinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().SLTon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().GiaThuMua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().GiaBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NgaySanXuat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().GhiChu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().HinhAnh)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSanPham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiHangHoa.TenLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.XuatXu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonViTinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SLTon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaThuMua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            @Convert.ToDateTime(item.NgaySanXuat).ToString("dd/MM/yyyy")
+        </td>
+        <td>
+            @Truncate(item.GhiChu, 100)
+        </td>
+        <td class="HinhAnh">
+            <img src="@Url.Content("~/HinhAnhSanPham/"+ item.HinhAnh)"/>
+        </td>
+        <td class="ChinhSua">
+            @Html.ActionLink("Sửa chi tiết", "SuaSanPham", new { id = item.MaSanPham }) <br />
+            @Html.ActionLink("Chi Tiết", "ChiTietSanPham", new { id = item.MaSanPham }) <br />
+            @Html.ActionLink("Nhập Kho", "Details", new { id = item.MaSanPham }) <br />
+            @Html.ActionLink("Xóa", "Delete", new { id = item.MaSanPham })
+        </td>
+    </tr>
+}
+
+</table>
+
+@*Tạo liên kết các trang*@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("QuanLySanPham", new {page = page}))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+    .HinhAnh {
+        resize:both;
+        margin:auto;
+    }
+    .HinhAnh img {
+        width:70%;
+        height:auto;
+    }
+    .ChinhSua {
+        width: 150px;
+    }
+
+</style>
+

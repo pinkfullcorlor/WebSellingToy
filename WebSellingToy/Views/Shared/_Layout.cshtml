@@ -1,4 +1,4 @@
-﻿@using WebSellingToy;
+﻿@using WebSellingToy.Models;
 @*@model IEnumerable<WebSellingToy.Models.LoaiHangHoa>*@
 
 @{
@@ -31,6 +31,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;300;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/StyleCSSFile/style.css")
@@ -44,8 +47,8 @@
     <section class="header">
         <div class="nav-login">
             <ul>
-                <li><a>Đăng Kí  <i class="fa fa-plus-circle" aria-hidden="true"></i></a></li>
-                <li><a>Đăng Nhập  <i class="fa fa-user" aria-hidden="true"></i></a></li>
+                <li><a href="@Url.Action("DangKy","NguoiMuaHang")">Đăng Kí  <i class="fa fa-plus-circle" aria-hidden="true"></i></a></li>
+                <li><a href="@Url.Action("DangNhap","NguoiMuaHang")">Đăng Nhập  <i class="fa fa-user" aria-hidden="true"></i></a></li>
 
             </ul>
         </div>
@@ -55,7 +58,7 @@
             <a href="index.html"><img src="~/image/fullcolorworkshop.jpg" alt="menu-icon" , width="200" , height="200"></a>
             <div class="nav-menu">
                 <ul>
-                    <li><a href="">Trang Chủ</a></li>
+                    <li><a href="~/Home/Index">Trang Chủ</a></li>
                     <li>
                         <a href="~/MuaHang/MuaHang">Sản Phẩm <i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-up" aria-hidden="true"></i></a>
                         @*@Html.ActionLink("Sản Phẩm","MuaHang","MuaHang")*@
@@ -65,7 +68,8 @@
                                 @*@{
                                     Html.RenderAction("RenderDSLoai");
                                 }*@
-                                @{                                 
+                                @{
+
                                     IEnumerable<WebSellingToy.Models.LoaiHangHoa> loaiHangHoas = ViewData["Loais"] as IEnumerable<WebSellingToy.Models.LoaiHangHoa>;
                                     var loais = ViewData["Loais"] as IEnumerable<WebSellingToy.Models.LoaiHangHoa>;
                                 }
