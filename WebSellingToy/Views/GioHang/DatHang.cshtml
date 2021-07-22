@@ -5,90 +5,107 @@
     Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
-<h2>DatHang</h2>
-<table align="center" border="1">
-    <tr style="text-align:center; font-weight:bold">
-        <td> Ma San Pham</td>
-        <td> Ten San Pham</td>
-        <td> Anh Bia</td>
-        <td> So Luong</td>
-        <td> Don Gia</td>
-        <td> Thanh Tien</td>
-    </tr>
+<head>
+    <style>
+        table tr td{
+            padding:10px;
+        }
+    </style>
+</head>
+
+<section class="saleoff">
+    <h2 style="text-align: left; font-size:30px">Đơn đặt hàng</h2>
+    <table align="center" border="1">
+        <tr style="text-align:center; font-weight:bold">
+            <td> Mã sản phẩm </td>
+            <td> Tên Sản Phẩm</td>
+            <td> Ảnh Sản Phẩm</td>
+            <td> Số Lượng</td>
+            <td> Đơn Giá</td>
+            <td> Thành Tiền</td>
+        </tr>
 
 
 
-    @foreach (var item in Model)
-    {
-        <tr style="text-align: center; font-weight:bold">
-            <td>@item.iMaSP</td>
-            <td>@item.sTenSP</td>
-            <td><img src="~/HinhAnhSanPham/@item.sHinhAnh" /></td>
-            @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @iMaSanPham = item.iMaSP }))
+        @foreach (var item in Model)
+        {
+            <tr style="text-align: center">
+                <td>@item.iMaSP</td>
+                <td>@item.sTenSP</td>
+                <td><img src="~/HinhAnhSanPham/@item.sHinhAnh" style="max-width:800px"/></td>
+                @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @iMaSanPham = item.iMaSP }))
+                {
+                    <td>
+                        <p>Số lượng: @item.iSoLuong </p>
+                    </td>
+                    <td>@String.Format("{0:0,0}", item.dDonGia)</td>
+                    <td>@String.Format("{0:0,0}", item.dThanhTien)</td>
+
+
+                }
+
+            </tr>
+        }
+        <tr style="font-weight:bold; text-align:right; color:red">
+            <td colspan="3"> Số lượng sản phẩm: @ViewBag.TongSoLuong</td>
+            <td colspan="3"> Tổng tiền: @String.Format("{0:0,0}", ViewBag.TongTien) VND</td>
+        </tr>
+        
+
+    </table>
+    <div style="font-weight: bold; color: tomato; text-align:left;">
+        <a href="@Url.Action("GioHang","GioHang")" style="font-size:20px; text-decoration:none">
+
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            Quay lại giỏ hàng
+        </a>
+
+    </div>
+
+    <div style="text-align: left; margin-top:10px; margin-bottom:20px;">
+        <h2 style="font-size:30px">Thông tin người đặt hàng</h2>
+        @{
+            KhachHang kh = Session["Taikhoan"] as KhachHang;
+        }
+        <table align="center">
+            @using (Html.BeginForm())
             {
-                <td>
-                    <input type="number" min="1" name="txtSoLuong" value="@item.iSoLuong" style="background: yellow">
-                </td>
-                <td>@String.Format("{0:0,0}", item.dDonGia)</td>
-                <td>@String.Format("{0:0,0}", item.dThanhTien)</td>
+                @Html.ValidationSummary(true)
+                <tr>
+                    <td>Họ tên khách hàng:</td>
+                    <td>@kh.TenKhachHang</td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ:</td>
+                    <td>@kh.DiaChi</td>
+                </tr>
+                <tr>
+                    <td>Số điện thoại:</td>
+                    <td>@kh.SoDienThoai</td>
+                </tr>
+                <tr>
+                    <td>Ngày đặt:</td>
+                    <td name="NgayLapHD">@DateTime.Now.ToString()</td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ nhận hàng:</td>
+                    <td><textarea name="DiaChiNhanHang" cols="40" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Đặt hàng ngay" style="margin-top: 10px; font-size: 20px; width: auto; height: 40px; background: white; font-family: font-family: 'Prompt', sans-serif; border-radius: 5px;color: black;"/>
+                    </td>
+                </tr>
 
 
             }
 
-        </tr>
-    }
-    <tr style="font-weight:bold; text-align:right; color:red">
-        <td colspan="3"> So luong san pham: @ViewBag.TongSoLuong</td>
-        <td colspan="3"> Tong Tien: @String.Format("{0:0,0}", ViewBag.TongTien) VND</td>
-    </tr>
-    <tr style="font-weight: bold; color: tomato; text-align:right;">
-        <td colspan="9">
-            @Html.ActionLink("Trở về giỏ hàng", "GioHang", "GioHang");
 
-        </td>
+        </table>
+    </div>
+    
 
-    </tr>
+</section>
 
-</table>
-
-<h2>Thông tin người đặt hàng</h2>
-@{
-    KhachHang kh = Session["Taikhoan"] as KhachHang;
-}
-<table align="center">
-    @using (Html.BeginForm())
-    {
-        @Html.ValidationSummary(true)
-        <tr>
-            <td>Họ tên khách hàng:</td>
-            <td>@kh.TenKhachHang</td>
-        </tr>
-        <tr>
-            <td>Địa chỉ:</td>
-            <td>@kh.DiaChi</td>
-        </tr>
-        <tr>
-            <td>Số điện thoại:</td>
-            <td>@kh.SoDienThoai</td>
-        </tr>
-        <tr>
-            <td>Ngày đặt:</td>
-            <td name="NgayLapHD">@DateTime.Now.ToString()</td>
-        </tr>
-        <tr>
-            <td>Địa chỉ nhận hàng:</td>
-            <td><textarea name="DiaChiNhanHang" cols="40" rows="5"></textarea></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Đặt hàng ngay"/>
-            </td>
-        </tr>
-
-
-    }
-
-
-</table>
 

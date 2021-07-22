@@ -142,7 +142,15 @@ namespace WebSellingToy.Controllers
 
         public ActionResult DatHang(FormCollection collection)
         {
-            
+            if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            if (Session["GioHang"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             HoaDonBanHang hdBanHang = new HoaDonBanHang();
             CTHoaDon ctHoaDon = new CTHoaDon();
 
@@ -177,8 +185,17 @@ namespace WebSellingToy.Controllers
 
             data.SubmitChanges();
             Session["GioHang"] = null;
-            return RedirectToAction("XacNhanDonHang","GioHang");
+            return RedirectToAction("XacNhanDonHang", "GioHang");
 
+        }
+
+        public ActionResult XacNhanDonHang()
+        {
+            if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
         }
     }
 }
