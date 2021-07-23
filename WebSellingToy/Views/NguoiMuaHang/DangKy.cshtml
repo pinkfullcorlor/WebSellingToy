@@ -30,16 +30,13 @@
                 @using (Html.BeginForm())
                 {
                     @Html.ValidationSummary(true)
-                <tr>
-                    <td>Họ tên khách hàng:</td>
-                    <td>@Html.TextBox("TenKhachHang")</td>
-                    <p style="color:red; font-style:italic;">@ViewData["Loi1"]</p>
-                </tr>
+                    <tr>
+                        <td>Họ tên khách hàng:</td>
+                        <td>@Html.TextBox("TenKhachHang")@ViewData["Loi1"]</td>
+                    </tr>
                     <tr>
                         <td>Tên đăng nhập khách hàng:</td>
-                        <td>@Html.TextBox("TenDangNhapKH")</td>
-                        <p style="color:red; font-style:italic;">@ViewData["LoiTrungTenDN"]</p>
-                        <p style="color:red; font-style:italic;">@ViewData["Loi2"]</p>
+                        <td>@Html.TextBox("TenDangNhapKH")@ViewData["Loi2"]</td>
                     </tr>
                     <tr>
                         <td>Nhập mật khẩu:</td>
