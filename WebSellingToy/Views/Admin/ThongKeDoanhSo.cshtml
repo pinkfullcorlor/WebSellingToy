@@ -1,0 +1,56 @@
+﻿@model WebSellingToy.Models.NgayThongKe
+
+
+@{
+    ViewBag.Title = "ThongKeDoanhSo";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Thông Kê Doanh Số</h2>
+
+<p>
+    
+</p>
+<div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            <label class="control-label col-md-2">Từ ngày:</label>
+            <div class="col-md-10">
+                <input type="date" name="dtTuNgay" />
+                @*@Html.EditorFor(model => model.dtTuNgay, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.dtTuNgay, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            <label class="control-label col-md-2">Đến ngày:</label>
+            <div class="col-md-10">
+                <input type="date" name="dtDenNgay" />
+                @*@Html.EditorFor(model => model.dtDenNgay, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.ValidationMessageFor(model => model.dtDenNgay, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <br />
+        <div>
+            <br />
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Thống kê" class="btn btn-default" />
+            </div>
+        </div>
+    }
+
+
+
+
+
+</div>
