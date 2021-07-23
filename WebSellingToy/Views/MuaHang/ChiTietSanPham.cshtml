@@ -24,14 +24,14 @@
 
     @*bootstrap cho cái drop list*@
     @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">*@
-   
+
 
 
 </head>
 
 <body>
     <main class="container">
-        
+
         <!-- Left Column / Headphones Image -->
         <div class="left-column">
             @*<img data-image="black" src="images/black.png" alt="">
@@ -48,7 +48,7 @@
                 <span>Sản Phẩm</span>
                 <h1>@Model.TenSanPham</h1>
                 @Html.Raw(@Model.GhiChu)
-                
+
             </div>
 
             <!-- Product Configuration -->
@@ -90,48 +90,36 @@
             </div>
 
             <div>
-                <p>Xuất xứ: @Model.XuatXu</p> 
-                <p>Năm sản xuất: Tháng @Convert.ToDateTime(Model.NgaySanXuat).ToString("MM/yyyy")</p> 
+                <p>Xuất xứ: @Model.XuatXu</p>
+                <p>Năm sản xuất: Tháng @Convert.ToDateTime(Model.NgaySanXuat).ToString("MM/yyyy")</p>
 
-            <!-- Product Pricing -->
-            <div class="product-price">
-                <span>@decimal.ToInt32(Model.GiaBan) VND</span>
-
-
+                <!-- Product Pricing -->
+                <div class="product-price">
+                    <span>@decimal.ToInt32(Model.GiaBan) VND</span>
 
 
+
+
+
+                </div>
+
+                <a href="@Url.Action("ThemGioHang","GioHang", new { @iMaSP = Model.MaSanPham, @strURL = Request.Url.ToString() })" class="cart-btn">
+                    Add to cart
+                </a>
+
+                
 
             </div>
-            <div>
-                <h3>
-                    Số Lượng
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Số Lượng
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">1</a>
-                            <a class="dropdown-item" href="#">2</a>
-                            <a class="dropdown-item" href="#">3</a>
-                            <a class="dropdown-item" href="#">4</a>
-                            <a class="dropdown-item" href="#">6</a>
-                            <a class="dropdown-item" href="#">7</a>
-                            <a class="dropdown-item" href="#">8</a>
-                            <a class="dropdown-item" href="#">9</a>
-                            <a class="dropdown-item" href="#">10</a>
-                            <a class="dropdown-item" href="#">11</a>
-                            <a class="dropdown-item" href="#">12</a>
-                        </div>
-                    </div>
+            <div style="margin-top:20px;">
+                <div class="fb-like" data-href="@Request.Url.ToString()" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
 
-                </h3>
             </div>
-            <a href="@Url.Action("ThemGioHang","GioHang", new { @iMaSP = Model.MaSanPham, @strURL = Request.Url.ToString() })" class="cart-btn">
-                Add to cart
-            </a>
-
+            
         </div>
     </main>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=228387244347643&autoLogAppEvents=1" nonce="Zl5UWMjj"></script>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>

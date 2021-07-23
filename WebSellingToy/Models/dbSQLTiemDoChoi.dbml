@@ -59,24 +59,6 @@
       <Association Name="QuyenTruyCap_NhanVien" Member="NhanViens" ThisKey="MaChucVu" OtherKey="MaChucVu" Type="NhanVien" />
     </Type>
   </Table>
-  <Table Name="dbo.SanPham" Member="SanPhams">
-    <Type Name="SanPham">
-      <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="MaLoai" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="XuatXu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DonViTinh" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="SLTon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="GiaThuMua" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="GiaBan" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Column Name="NgaySanXuat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="HinhAnh" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Association Name="SanPham_PhieuNhapKho" Member="PhieuNhapKhos" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="PhieuNhapKho" />
-      <Association Name="SanPham_DSBanHang" Member="DSBanHangs" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="DSBanHang" />
-      <Association Name="LoaiHangHoa_SanPham" Member="LoaiHangHoa" ThisKey="MaLoai" OtherKey="MaLoai" Type="LoaiHangHoa" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.PhieuNhapKho" Member="PhieuNhapKhos">
     <Type Name="PhieuNhapKho">
       <Column Name="MaNhapKho" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -113,6 +95,24 @@
       <Column Name="MaKhachHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Association Name="HoaDonBanHang_CTHoaDon" Member="HoaDonBanHang" ThisKey="MaHoaDon" OtherKey="MaHoaDon" Type="HoaDonBanHang" IsForeignKey="true" />
       <Association Name="KhachHang_CTHoaDon" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKhachHang" Type="KhachHang" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SanPham" Member="SanPhams">
+    <Type Name="SanPham">
+      <Column Name="MaSanPham" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenSanPham" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaLoai" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="XuatXu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DonViTinh" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SLTon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaThuMua" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="GiaBan" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySanXuat" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="HinhAnh" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="SanPham_PhieuNhapKho" Member="PhieuNhapKhos" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="PhieuNhapKho" />
+      <Association Name="SanPham_DSBanHang" Member="DSBanHangs" ThisKey="MaSanPham" OtherKey="MaSanPham" Type="DSBanHang" />
+      <Association Name="LoaiHangHoa_SanPham" Member="LoaiHangHoa" ThisKey="MaLoai" OtherKey="MaLoai" Type="LoaiHangHoa" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
