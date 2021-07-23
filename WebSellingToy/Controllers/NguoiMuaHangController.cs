@@ -70,7 +70,7 @@ namespace WebSellingToy.Controllers
             db.SubmitChanges();
             return RedirectToAction("Home", "Index");
 
-            return this.DangKy();
+            
         }
 
 
