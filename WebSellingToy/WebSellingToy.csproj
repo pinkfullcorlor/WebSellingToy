@@ -130,6 +130,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoaiDoChoiController.cs" />
     <Compile Include="Controllers\MuaHangController.cs" />
     <Compile Include="Controllers\NguoiMuaHangController.cs" />
     <Compile Include="Controllers\SharedController.cs" />
@@ -204,6 +205,7 @@
     <Content Include="image\gundam_plank.jpg" />
     <Content Include="image\Layout_VnExpress.png" />
     <Content Include="image\log-in.png" />
+    <Content Include="image\onepiece.jpg" />
     <Content Include="image\puzzle-toy1.jpg" />
     <Content Include="image\puzzle-toy2.jpg" />
     <Content Include="image\puzzle-toy3.jpg" />
@@ -351,6 +353,9 @@
     <Content Include="Views\Admin\ThemMoiAdmin.cshtml" />
     <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
+    <Content Include="Views\LoaiDoChoi\Mohinh.cshtml" />
+    <Content Include="Views\LoaiDoChoi\Figure.cshtml" />
+    <Content Include="Views\LoaiDoChoi\Puzzel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

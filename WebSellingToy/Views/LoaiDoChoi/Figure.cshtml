@@ -1,0 +1,102 @@
+﻿@*@model IEnumerable<WebSellingToy.Models.SanPham>
+    @{
+        ViewBag.Title = "Figure";
+        Layout = "~/Views/Shared/_UserLayout.cshtml";
+    }
+
+    <html>
+    <link href="~/StyleCSSFile/style.css" rel="stylesheet" />
+    <link href="~/StyleCSSFile/StyleAllProduce.css" rel="stylesheet" />
+    <body>
+        <section class="newfeeds">
+            <h1>FIGURE</h1>
+            <p>Các loại Figure đang bán trên TG</p>
+
+            <div class="row-grid">
+                <div class="grid-item">
+                    <img src="~/image/onepiece.jpg" alt="">
+
+                    <p>
+                        <a href="~/MuaHang/ChiTietSanPham"><h1>Figure</h1></a>
+                        <h2>
+
+                            CHOPPER ROBO SUPER 3 HORN DOZER - MÔ HÌNH ONE PIECE CHÍNH HÃNG BANDAI
+                        </h2>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <img src="~/image/figure2.jpg" alt="">
+                    <h1><a href=""> Mobile Suit Gundam Calendar 2021 đầy đao kiếm</a></h1>
+                    <p>
+                        âsadasda
+                        <a href=""><i>đọc tiếp</i></a>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <img src="~/image/figure3.jpg" alt="">
+                    <h1><a href="">Bất ngờ bộ sưu tập đồ chơi hàng xóm quá cố tặng có giá hơn 12 tỷ đồng</a></h1>
+                    <p>
+                        ádsadasd
+                        <a href=""><i>đọc tiếp</i></a>
+                    </p>
+                </div>
+
+                <div class="grid-item">
+                    <img src="~/image/tintuc.jpeg" alt="">
+                    <h1><a href="">Bất ngờ bộ sưu tập đồ chơi hàng xóm quá cố tặng có giá hơn 12 tỷ đồng</a></h1>
+                    <p>
+                        Cặp vợ chồng già không hề biết rằng món quà mà người hàng xóm quá cố đã tặng lại có giá trị như vậy.
+                        Đây là bộ sưu tập đồ chơi bằng nhựa mà người hàng xóm hâm mộ bộ phim Star War (Chiến tranh giữa các vì sao) đã tặng cho cặp vợ chồng
+                        sống ở Stourbridge, West Midlands, Anh.
+                        <a href=""><i>đọc tiếp</i></a>
+                    </p>
+                </div>
+
+
+            </div>
+
+
+
+        </section>
+
+    </body>
+    </html>*@
+
+@model IEnumerable<WebSellingToy.Models.SanPham>
+
+@{
+
+    ViewBag.Title = "Home Page";
+    if (Session["TaiKhoan"] != null)
+    {
+        Layout = "~/Views/Shared/_UserLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+<link href="~/StyleCSSFile/style.css" rel="stylesheet" />
+<link href="~/StyleCSSFile/StyleAllProduce.css" rel="stylesheet" />
+
+<section class="newfeeds">
+    <h1>Các sản phẩm Figure đang hot</h1>
+    <div class="row-grid">
+        @foreach (var sanpham in Model)
+        {
+            <div class="grid-item">
+                <a href="@Url.Action("Detail", "SellingToy", new { id = sanpham.MaSanPham })"></a>
+                <img alt="@sanpham.TenSanPham" src="@Url.Content("~/HinhAnhSanPham/"+ sanpham.HinhAnh)" />
+                <h1><a href="">@sanpham.TenSanPham</a></h1>
+
+                <p class="giatien">@decimal.ToInt32(sanpham.GiaBan) VND</p>
+                <div class="layer">
+                    <h3 class="buynow"><a href="@Url.Action("ChiTietSanPham","MuaHang", new { id = sanpham.MaSanPham})"><br>MUA NGAY <br><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></h3>
+                </div>
+
+            </div>
+
+        }
+
+    </div>
+</section>
