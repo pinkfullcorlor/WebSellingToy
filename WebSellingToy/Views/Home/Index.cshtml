@@ -78,15 +78,15 @@
     <section>
         <ul>
             @*@{
-                IEnumerable<WebSellingToy.Models.LoaiHangHoa> loaiHangHoas = ViewData["Loais"] as IEnumerable<WebSellingToy.Models.LoaiHangHoa>;
-                var loais = ViewData["Loais"] as IEnumerable<WebSellingToy.Models.LoaiHangHoa>;
-            }
-            @ViewData["Loais"]
+                    IEnumerable<WebSellingToy.Models.LoaiHangHoa> loaiHangHoas = ViewData["Loais"] as IEnumerable<WebSellingToy.Models.LoaiHangHoa>;
+                    var loais = ViewData["Loais"] as IEnumerable<WebSellingToy.Models.LoaiHangHoa>;
+                }
+                @ViewData["Loais"]
 
-            @foreach (var loaiHang in loais)
-            {
-                <li>@loaiHang.TenLoai</li>
-            }*@
+                @foreach (var loaiHang in loais)
+                {
+                    <li>@loaiHang.TenLoai</li>
+                }*@
         </ul>
     </section>
 
@@ -170,9 +170,9 @@
 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         </div>
+
         <div>
             <h1>Trang FANPAGE của cửa hàng</h1>
             <p>Like và chia sẻ bài viết để cập nhật tin tức về giảm giá của cửa hàng</p>
@@ -186,20 +186,16 @@
         </div>
 
 
-    </section>
-
-=======
 
     </section>
+    
 
 
 
->>>>>>> parent of 4d69da8 (Pink commit in 23/07/2021 18:48)
-=======
 
-    </section>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=228387244347643&autoLogAppEvents=1" nonce="wJ78U59y"></script>
 
->>>>>>> parent of 4d69da8 (Pink commit in 23/07/2021 18:48)
 
 
 
