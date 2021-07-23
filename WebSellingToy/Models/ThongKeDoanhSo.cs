@@ -24,11 +24,8 @@ namespace WebSellingToy.Models
         //    iSoLuongBan = dsBanHang.SLBan;
         //    dTongTien = dsBanHang.TongTien;
 
-            
+
 
         //}
-
-
-
     }
 }
