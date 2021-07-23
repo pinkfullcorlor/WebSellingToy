@@ -354,9 +354,12 @@
     <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Content Include="Views\LoaiDoChoi\Mohinh.cshtml" />
     <Content Include="Views\LoaiDoChoi\Figure.cshtml" />
     <Content Include="Views\LoaiDoChoi\Puzzel.cshtml" />
+=======
+>>>>>>> parent of 4d69da8 (Pink commit in 23/07/2021 18:48)
 =======
 >>>>>>> parent of 4d69da8 (Pink commit in 23/07/2021 18:48)
   </ItemGroup>
