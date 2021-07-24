@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DanhMucDoChoiController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MuaHangController.cs" />
@@ -190,6 +191,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="HinhAnhSanPham\alo.jpg" />
     <Content Include="HinhAnhSanPham\figure1.jpg" />
     <Content Include="HinhAnhSanPham\figure2.jfif" />
     <Content Include="HinhAnhSanPham\gundam1.jpg" />
@@ -354,6 +356,10 @@
     <Content Include="Views\Admin\ThemMoiAdmin.cshtml" />
     <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
+    <Content Include="Views\DanhMucDoChoi\MoHinh.cshtml" />
+    <Content Include="Views\DanhMucDoChoi\Figure.cshtml" />
+    <Content Include="Views\DanhMucDoChoi\Puzzel.cshtml" />
+    <Content Include="Views\DanhMucDoChoi\TECH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
