@@ -1,0 +1,99 @@
+﻿
+@model IEnumerable<WebSellingToy.Models.LoaiHangHoa>
+
+@{
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    @*<meta name="viewport" content="width=device-width, initial-scale=1.0">*@
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/Content/style.css")
+        <link rel="stylesheet" href="style.css">
+        @Styles.Render("~/Content/style.css")
+        <link rel="stylesheet" href="~/Content/style.css">*@
+    <link href="~/StyleCSSFile/style.css" rel="stylesheet" />
+    <!-- font chữ -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap" rel="stylesheet">    -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;300;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    <section class="header">
+        <div class="nav-login">
+            <ul>
+                <li><a>Tên Tài Khoản  <i class="fa fa-plus-circle" aria-hidden="true"></i></a></li>
+                <li><a>Đăng Xuất  <i class="fa fa-user" aria-hidden="true"></i></a></li>
+
+            </ul>
+        </div>
+
+
+        <nav>
+            <a href="index.html"><img src="~/image/fullcolorworkshop.jpg" alt="menu-icon" , width="200" , height="200"></a>
+            <div class="nav-menu">
+                <ul>
+                    <li><a href="">Trang Chủ</a></li>
+                    <li>
+                        <a href="">Sản Phẩm <i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+                        <div class="sub-menu-1">
+                            <ul>
+
+                                @*@{
+                                        Html.RenderAction("RenderDSLoai");
+                                    }*@
+
+                            </ul>
+                        </div>
+
+                    </li>
+                    <li><a href="">SALE OFF</a></li>
+                    <li><a href="">Tin Tức</a></li>
+                    <li><a href="">Liên Hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+        @*<div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
+            </div>*@
+        @RenderBody()
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+
+        <section class="footer">
+            Liên hệ chúng tôi tại:
+            <a href="https://www.facebook.com/PinkFullColor/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/channel/UC5NrRSWb3um7CM1fnbZo7eQ"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/pinkfullcolor/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/pinkfullcolor/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <h4>Design By PinkFullColor</h4>
+            <hr />
+            <footer>
+                <p>Copyright&copy; 2021 All Copyrights Reserved</p>
+            </footer>
+        </section>
+
+
+    </section>
+
+</body>
+</html>

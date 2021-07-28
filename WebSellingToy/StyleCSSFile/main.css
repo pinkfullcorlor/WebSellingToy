@@ -1,0 +1,49 @@
+.input-icons i {
+    position: absolute;
+}
+  
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+  
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+  
+.text {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+nav{
+    background-color:#292525;
+}
+nav a{
+    display:inline-block;
+    padding:10px;
+    font-size:20px;
+    color:rgb(255, 255, 255);
+    text-decoration:none;
+}
+nav a:hover{
+    background-color:rgb(167, 71, 15);
+}
+
+
+.fa {
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .fa:hover {
+    color: rgb(0, 0, 0);
+  }
+
+  th{
+      font-size: 50px;
+  }
+

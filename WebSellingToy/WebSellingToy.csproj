@@ -194,6 +194,7 @@
     <Content Include="HinhAnhSanPham\figure1.jpg" />
     <Content Include="HinhAnhSanPham\figure2.jfif" />
     <Content Include="HinhAnhSanPham\gundam1.jpg" />
+    <Content Include="HinhAnhSanPham\s-l1600.jpg" />
     <Content Include="image\add-friend.png" />
     <Content Include="image\figure1.jpg" />
     <Content Include="image\figure2.jfif" />
@@ -359,6 +360,7 @@
     <Content Include="Views\LoaiDoChoi\Mohinh.cshtml" />
     <Content Include="Views\LoaiDoChoi\Figure.cshtml" />
     <Content Include="Views\LoaiDoChoi\Puzzel.cshtml" />
+    <Content Include="Views\LoaiDoChoi\TECH.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
