@@ -22,7 +22,6 @@ namespace WebSellingToy.Controllers
         }
 
         dbSQLTiemDoChoiDataContext db = new dbSQLTiemDoChoiDataContext();
-        
 
         [HttpPost]
         public ActionResult DangKy(FormCollection collection, KhachHang kh)
@@ -59,41 +58,19 @@ namespace WebSellingToy.Controllers
             //    return RedirectToAction("Home","Index");
 
             //}
-            KhachHang khtest = db.KhachHangs.FirstOrDefault(n => n.TenDangNhapKH == tendn);
-            if (String.IsNullOrEmpty(hoten))
-            {
-                ViewData["Loi1"] = "Họ tên khách hàng không được để trống";
-            }
-            else if (String.IsNullOrEmpty(tendn))
-            {
-                ViewData["Loi2"] = "Tên đăng nhập không được để trống";
-            }
-            else if (String.IsNullOrEmpty(matkhau))
-            {
-                ViewData["Loi3"] = "Mật khẩu không được để trống";
-            }
-            else if (khtest != null)
-            {
-                ViewData["LoiTrungTenDN"] = "Tên đăng nhập đã tồn tại, tạo tên khác!!";
-            }
-            else if (khtest == null)
-            {
-                
 
-                kh.TenKhachHang = hoten;
-                kh.TenDangNhapKH = tendn;
-                kh.MatKhau = matkhau;
-                kh.DiaChi = diachi;
-                kh.NgaySinh = DateTime.Parse(ngaysinh);
-                kh.SoDienThoai = sodienthoai;
-                db.KhachHangs.InsertOnSubmit(kh);
-                db.SubmitChanges();
-                return RedirectToAction("Index", "Home");
-            }
 
-            return View();
+            kh.TenKhachHang = hoten;
+            kh.TenDangNhapKH = tendn;
+            kh.MatKhau = matkhau;
+            kh.DiaChi = diachi;
+            kh.NgaySinh = DateTime.Parse(ngaysinh);
+            kh.SoDienThoai = sodienthoai;
+            db.KhachHangs.InsertOnSubmit(kh);
+            db.SubmitChanges();
+            return RedirectToAction("Home", "Index");
 
-            
+            return this.DangKy();
         }
 
 

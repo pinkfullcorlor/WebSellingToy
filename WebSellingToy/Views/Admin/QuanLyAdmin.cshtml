@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Quản trị WEB</h2>
+<h2>QuanLyAdmin</h2>
 
 <p>
     @Html.ActionLink("Create New", "ThemMoiAdmin")
@@ -66,9 +66,9 @@
             @Html.DisplayFor(modelItem => item.GioiTinh)
         </td>
         <td>
-            @Html.ActionLink("Chỉnh Sửa", "EditAdmin", new { id=item.MaNhanVien }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaNhanVien }) |
             @Html.ActionLink("Details", "Details", new { id=item.MaNhanVien }) |
-            @Html.ActionLink("Delete", "Xoa1NhanVien", new { id=item.MaNhanVien })
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaNhanVien })
         </td>
     </tr>
 }

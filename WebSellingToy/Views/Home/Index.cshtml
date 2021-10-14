@@ -78,15 +78,15 @@
     <section>
         <ul>
             @*@{
-                    IEnumerable<WebSellingToy.Models.LoaiHangHoa> loaiHangHoas = ViewData["Loais"] as IEnumerable<WebSellingToy.Models.LoaiHangHoa>;
-                    var loais = ViewData["Loais"] as IEnumerable<WebSellingToy.Models.LoaiHangHoa>;
-                }
-                @ViewData["Loais"]
+                IEnumerable<WebSellingToy.Models.LoaiHangHoa> loaiHangHoas = ViewData["Loais"] as IEnumerable<WebSellingToy.Models.LoaiHangHoa>;
+                var loais = ViewData["Loais"] as IEnumerable<WebSellingToy.Models.LoaiHangHoa>;
+            }
+            @ViewData["Loais"]
 
-                @foreach (var loaiHang in loais)
-                {
-                    <li>@loaiHang.TenLoai</li>
-                }*@
+            @foreach (var loaiHang in loais)
+            {
+                <li>@loaiHang.TenLoai</li>
+            }*@
         </ul>
     </section>
 
@@ -171,29 +171,12 @@
 
         </div>
 
-        <div>
-            <h1>Trang FANPAGE của cửa hàng</h1>
-            <p>Like và chia sẻ bài viết để cập nhật tin tức về giảm giá của cửa hàng</p>
-        </div>
-
-        <div style="margin:20px">
-            <div class="fb-page" data-href="https://www.facebook.com/FullColorStudio.69/" data-tabs="timeline" data-width="500" data-height="130" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false">
-                <blockquote cite="https://www.facebook.com/FullColorStudio.69/" class="fb-xfbml-parse-ignore">
-                    <a href="https://www.facebook.com/FullColorStudio.69/">Pink Full Color</a>
-                </blockquote>
-            </div>
-
-        </div>
-
 
     </section>
 
-    
 
 
 
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=228387244347643&autoLogAppEvents=1" nonce="wJ78U59y"></script>
 
 </body>
 </html>
