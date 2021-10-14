@@ -4,7 +4,7 @@
     {
         Response.Redirect("~/Home/Index");
     }
-    else if(Session["TaikhoanAdmin"] != null)
+    else if (Session["TaikhoanAdmin"] != null)
     {
         var session = Session["TaikhoanAdmin"] as WebSellingToy.Models.NhanVien;
         tkadmin = session;
@@ -33,17 +33,35 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Quản lý web", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Admin")</li>
                     <li>@Html.ActionLink("Quản Lý Sản Phẩm", "QuanLySanPham", "Admin")</li>
                     <li>@Html.ActionLink("Quản Lý Nhân Viên", "QuanLyAdmin", "Admin")</li>
+                    <li>@Html.ActionLink("Thống Kê Doanh Số", "ThongKeDoanhSo", "Admin")</li>
+                    <li>@Html.ActionLink("Xác nhận đơn hàng", "XacNhanDonHang", "Admin")</li>
+                    <li>@Html.ActionLink("Xác nhận đã thanh toán", "DSXacNhanThanhToan", "Admin")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink(tkadmin.TenNhanVien , "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-                    <li>@Html.ActionLink("Đăng Xuất", "DangXuatAdmin", "Admin")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            @tkadmin.TenNhanVien <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("DoiMatKhauAdmin", "Admin", new {id = tkadmin.MaNhanVien})">Đổi mật khẩu</a></li>
+                            
+                            <li role="separator" class="divider"></li>
+                            <li>@Html.ActionLink("Đăng Xuất", "DangXuatAdmin", "Admin")</li>
+                        </ul>
+                    </li>
+                   
+
+
+
+                    
                 </ul>
             </div>
         </div>
@@ -55,7 +73,7 @@
         <hr />
         @RenderBody()
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Power by PinkFullColor</p>
         </footer>
     </div>
 

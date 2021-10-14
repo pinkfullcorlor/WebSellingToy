@@ -1,24 +1,13 @@
-﻿@*@using WebSellingToy.Models
-@model List<GioHang>*@
+﻿
+@model IEnumerable<WebSellingToy.Models.LoaiHangHoa>
+
 @{
-
-    var khachhang = Session["Taikhoan"] as WebSellingToy.Models.KhachHang;
-    
-    List<WebSellingToy.Models.GioHang> lstGioHang = Session["GioHang"] as List<WebSellingToy.Models.GioHang>;
-    int tongsl = 0;
-    if (lstGioHang != null)
-    {
-        tongsl = lstGioHang.Sum(n => n.iSoLuong);
-    }
-
-    //var giohang = Session["GioHang"] as List<WebSellingToy.Models.GioHang>;
-
 
 }
 <!DOCTYPE html>
 <html>
 <head>
-    
+
     <meta charset="utf-8" />
     @*<meta name="viewport" content="width=device-width, initial-scale=1.0">*@
     <title>@ViewBag.Title - My ASP.NET Application</title>
@@ -38,37 +27,32 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-    
-
 </head>
 <body>
 
     <section class="header">
         <div class="nav-login">
             <ul>
-                <li><a href="@Url.Action("GioHang","GioHang")">Giỏ Hàng(@tongsl) <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
-                <li><a>@khachhang.TenKhachHang <i class="fa fa-plus-circle" aria-hidden="true"></i></a></li>
-                <li><a href="@Url.Action("LogOut","Shared")">Đăng Xuất  <i class="fa fa-user" aria-hidden="true"></i></a></li>
+                <li><a>Tên Tài Khoản  <i class="fa fa-plus-circle" aria-hidden="true"></i></a></li>
+                <li><a>Đăng Xu  <i class="fa fa-user" aria-hidden="true"></i></a></li>
 
             </ul>
         </div>
 
 
         <nav>
-            <a href="~/Home/Index"><img src="~/image/fullcolorworkshop.jpg" alt="menu-icon" , width="200" , height="200"></a>
+            <a href="index.html"><img src="~/image/fullcolorworkshop.jpg" alt="menu-icon" , width="200" , height="200"></a>
             <div class="nav-menu">
                 <ul>
-                    <li><a href="~/Home/Index">Trang Chủ</a></li>
+                    <li><a href="">Trang Chủ</a></li>
                     <li>
-                        <a href="~/MuaHang/MuaHang">Sản Phẩm <i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-up" aria-hidden="true"></i></a>
-                        
+                        <a href="">Sản Phẩm <i class="fa fa-angle-down" aria-hidden="true"></i><i class="fa fa-angle-up" aria-hidden="true"></i></a>
                         <div class="sub-menu-1">
                             <ul>
 
                                 @*@{
-                    Html.RenderAction("RenderDSLoai");
-                }*@
+                                        Html.RenderAction("RenderDSLoai");
+                                    }*@
 
                             </ul>
                         </div>

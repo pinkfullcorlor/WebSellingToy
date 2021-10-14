@@ -147,7 +147,10 @@
     <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\NgayThongKe.cs" />
     <Compile Include="Models\ThongKeDoanhSo.cs" />
+    <Compile Include="Models\ThongTinDatHang.cs" />
+    <Compile Include="Models\ThongTinSanPhamDatHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\DongYXacNhanDonHangViewModel.cs" />
     <Compile Include="ViewModel\UserLayoutViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -191,9 +194,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="HinhAnhSanPham\28xp-pepefrog-articleInline.jpg" />
+    <Content Include="HinhAnhSanPham\e010fd6183a2b3791aebdb0c44f00c75.jpg" />
     <Content Include="HinhAnhSanPham\figure1.jpg" />
     <Content Include="HinhAnhSanPham\figure2.jfif" />
+    <Content Include="HinhAnhSanPham\figure2.jpg" />
     <Content Include="HinhAnhSanPham\gundam1.jpg" />
+    <Content Include="HinhAnhSanPham\images.png" />
+    <Content Include="HinhAnhSanPham\map-dust2.jpg" />
+    <Content Include="HinhAnhSanPham\map-italy-cs.jpeg" />
+    <Content Include="HinhAnhSanPham\toi_thay_hoa_vang.jpg" />
+    <Content Include="HinhAnhSanPham\y-thien-do-long-ky.cf0b9.cover.jpg" />
     <Content Include="image\add-friend.png" />
     <Content Include="image\figure1.jpg" />
     <Content Include="image\figure2.jfif" />
@@ -297,6 +308,7 @@
     <Content Include="Content\ContenForLogin\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Content\ContenForLogin\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Content\ContenForLogin\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="libman.json" />
     <None Include="Models\dbSQLTiemDoChoi.dbml.layout">
       <DependentUpon>dbSQLTiemDoChoi.dbml</DependentUpon>
     </None>
@@ -359,6 +371,17 @@
     <Content Include="Views\LoaiDoChoi\Mohinh.cshtml" />
     <Content Include="Views\LoaiDoChoi\Figure.cshtml" />
     <Content Include="Views\LoaiDoChoi\Puzzel.cshtml" />
+    <Content Include="Views\Admin\XacNhanDonHang.cshtml" />
+    <Content Include="Views\Admin\DongYXacNhanDonHang.cshtml" />
+    <Content Include="Views\Admin\XacNhanXoaDonHang.cshtml" />
+    <Content Include="Views\Admin\DSXacNhanThanhToan.cshtml" />
+    <Content Include="Views\Admin\XacNhanThanhToan.cshtml" />
+    <Content Include="Views\Admin\BangThongKeDS.cshtml" />
+    <Content Include="Views\Admin\DoiMatKhauAdmin.cshtml" />
+    <Content Include="Views\Admin\EditAdmin.cshtml" />
+    <Content Include="Views\Admin\ThongKeDoanhSo.cshtml" />
+    <Content Include="Views\Admin\Xoa1NhanVien.cshtml" />
+    <Content Include="Views\Admin\Xoa1SanPham.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

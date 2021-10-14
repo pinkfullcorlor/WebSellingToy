@@ -1,0 +1,73 @@
+﻿@model WebSellingToy.Models.HoaDonBanHang
+
+@{
+    ViewBag.Title = "XacNhanThanhToan";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>XacNhanThanhToan</h2>
+
+<div>
+    <p>Thong tin don dat hang</p>
+    <div class="form-group">
+        <label class="control-label col-md-2">Mã đơn hàng: </label>
+        <div class="col-md-10">
+            <p>@Model.MaHoaDon</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Xác nhận thanh toán: </label>
+        <div class="col-md-10">
+            <p>@Model.XacNhanDonHang</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Tình trạng thanh toán:</label>
+        <div class="col-md-10">
+            <p>@Model.TinhTrangThanhToan</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Ngày lập: </label>
+        <div class="col-md-10">
+            <p>@Model.NgayLap</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Địa chỉ nhận hàng: </label>
+        <div class="col-md-10">
+            <p>@Model.DiaChiNhanHang</p>
+        </div>
+    </div>
+
+
+    <br />
+    <br />
+
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Xác nhận thanh toán" class="btn btn-default" />
+        </div>
+    </div>
+
+}
+
+@using (Html.BeginForm("XacNhanXoaDonHang", "Admin", new { id = Model.MaHoaDon }))
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Xóa đơn hàng" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+
+

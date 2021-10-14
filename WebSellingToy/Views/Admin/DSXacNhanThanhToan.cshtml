@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebSellingToy.Models.HoaDonBanHang>
+
+@{
+    ViewBag.Title = "DSXacNhanThanhToan";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Xác nhận thanh toán đơn hàng</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Mã hóa đơn
+        </th>
+        <th>
+            Xác nhận đơn hàng
+        </th>
+        <th>
+            Tình trạng thanh toán
+        </th>
+        <th>
+            Ngày lập
+        </th>
+        <th>
+            Địa chỉ nhận hàng
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaHoaDon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.XacNhanDonHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinhTrangThanhToan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayLap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChiNhanHang)
+        </td>
+        <td>
+            @Html.ActionLink("Xác nhận thanh toán", "XacNhanThanhToan", new { id = item.MaHoaDon }) 
+            
+        </td>
+    </tr>
+}
+
+</table>

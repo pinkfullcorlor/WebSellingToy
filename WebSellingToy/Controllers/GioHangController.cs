@@ -43,6 +43,7 @@ namespace WebSellingToy.Controllers
                 return Redirect(strURL);
             }
         }
+       
 
         private int TongSoLuong()
         {
@@ -160,6 +161,7 @@ namespace WebSellingToy.Controllers
             var NgayLapHD = string.Format("{0:MM/dd/yyyy}", collection["NgayLapHD"]);
             var DiaChiNhanHang = collection["DiaChiNhanHang"];
 
+            hdBanHang.XacNhanDonHang = false;
             hdBanHang.TinhTrangThanhToan = false;
             hdBanHang.DiaChiNhanHang = DiaChiNhanHang;
             hdBanHang.NgayLap = DateTime.Now;

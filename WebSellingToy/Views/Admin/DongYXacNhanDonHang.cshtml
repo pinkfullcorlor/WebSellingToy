@@ -1,0 +1,117 @@
+﻿@model WebSellingToy.ViewModel.DongYXacNhanDonHangViewModel
+
+@{
+    ViewBag.Title = "DongYXacNhanDonHang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Xác nhận đơn hàng</h2>
+
+<h3>Mã đơn đặt hàng: @Model.viewmodelDSBanHang.First().MaHoaDon</h3>
+
+<table class="table">
+    @{
+        var viewmodelSP = Model.viewmodelThongTinSP;
+        var viewmodelKH = Model.viewmodelThongTinDatHang;
+    }
+    <tr>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Giá bán
+        </th>
+        <th>
+            Số lượng mua
+        </th>
+        <th>
+            Tổng tiền
+        </th>
+ 
+    </tr>
+
+    @foreach (var item in Model.viewmodelThongTinSP)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.sTenSanPham)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dGiaBan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.iSoLuongMua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dTongTien)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+<div>
+    <p>Thông tin đơn đặt hàng</p>
+    <div class="form-group">
+        <label class="control-label col-md-2">Tên khách hàng: </label>
+        <div class="col-md-10">
+            <p>@Model.viewmodelThongTinDatHang.sTenKhachHang</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Số điện thoại: </label>
+        <div class="col-md-10">
+            <p>@Model.viewmodelThongTinDatHang.sSoDienThoai</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Địa chỉ: </label>
+        <div class="col-md-10">
+            <p>@Model.viewmodelThongTinDatHang.sDiaChi</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Địa chỉ nhận hàng: </label>
+        <div class="col-md-10">
+            <p>@Model.viewmodelThongTinDatHang.sDiaChiNhanHang</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Số tiền thanh toán: </label>
+        <div class="col-md-10">
+            <p>@decimal.ToInt32(ViewBag.TongTien) VND</p>
+        </div>
+    </div>
+
+
+
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Xác nhận đơn hàng" class="btn btn-default" />          
+        </div>
+    </div>
+
+}
+     
+
+@using (Html.BeginForm("XacNhanXoaDonHang", "Admin", new { id = Model.viewmodelDSBanHang.First().MaHoaDon }))
+{
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Xóa đơn hàng" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<br />
+<br />
+

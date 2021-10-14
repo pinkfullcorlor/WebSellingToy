@@ -102,8 +102,9 @@ else
         <td class="ChinhSua">
             @Html.ActionLink("Sửa chi tiết", "SuaSanPham", new { id = item.MaSanPham }) <br />
             @Html.ActionLink("Chi Tiết", "ChiTietSanPham", new { id = item.MaSanPham }) <br />
-            @Html.ActionLink("Nhập Kho", "Details", new { id = item.MaSanPham }) <br />
-            @Html.ActionLink("Xóa", "Delete", new { id = item.MaSanPham })
+            @*@Html.ActionLink("Nhập Kho", "Details", new { id = item.MaSanPham }) <br />*@
+
+            @Html.ActionLink("Xóa", "Xoa1SanPham",new { id = item.MaSanPham })
         </td>
     </tr>
 }
